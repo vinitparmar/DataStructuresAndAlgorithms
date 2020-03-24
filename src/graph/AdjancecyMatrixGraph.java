@@ -10,6 +10,18 @@ public class AdjancecyMatrixGraph implements Graph{
 	private GraphType graphType = GraphType.DIRECTED;
 	private int numVertices = 0;
 	
+	
+	public int getNumVertices() {
+		return numVertices;
+	}
+
+
+	public void setNumVertices(int numVertices) {
+		this.numVertices = numVertices;
+	}
+
+	
+	
 	public AdjancecyMatrixGraph(int numVertices ,GraphType graphtype) {
 		this.graphType =  graphType;
 		this.numVertices =  numVertices;
