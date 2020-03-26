@@ -40,7 +40,7 @@ public class AdjancecyMatrixGraph implements Graph{
 	@Override
 	public void addEdge(int v1, int v2) {
 		adjancencyMatrix[v1][v2] = 1;
-		if(graphType == graphType.UNDIRECTED) {
+		if(graphType == graphType.UNDIREDTED) {
 			adjancencyMatrix[v2][v1] = 1;
 		}
 		
@@ -59,6 +59,44 @@ public class AdjancecyMatrixGraph implements Graph{
 		//return list in sorted order
 		Collections.sort(adjancencyVertexList);
 		return adjancencyVertexList;
+	}
+
+
+	@Override
+	public GraphType TypeofGraph() {
+		// TODO Auto-generated method stub
+		return graphType;
+	}
+
+
+	@Override
+	public void addEdge(int v1, int v2, int weight) {
+		// TODO Auto-generated method stub
+		adjancencyMatrix[v1][v2]=weight;
+		if(graphType == graphType.UNDIREDTED) {
+			adjancencyMatrix[v2][v1] = weight;
+		}
+		
+	}
+
+
+	@Override
+	public int getWeightedEdge(int v1, int v2) {
+		// TODO Auto-generated method stub
+		return adjancencyMatrix[v2][v1];
+	}
+
+
+	@Override
+	public int getIndegree(int v) {
+		// TODO Auto-generated method stub
+		int inDegree = 0;
+		for(int i =0;i<numVertices;i++) {
+			if(adjancencyMatrix[v][i]!=0) {
+				inDegree++;
+			}
+		}
+		return inDegree;
 	}
 
 }
