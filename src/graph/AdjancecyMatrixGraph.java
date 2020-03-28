@@ -51,7 +51,7 @@ public class AdjancecyMatrixGraph implements Graph{
 		List<Integer> adjancencyVertexList = new ArrayList<Integer>();
 		if(v>=0 && v<numVertices) {
 			for(int i=0; i<numVertices;i++) {
-				if(adjancencyMatrix[v][i]==1) {
+				if(adjancencyMatrix[v][i]!=0) {
 					adjancencyVertexList.add(i);
 				}
 			}
