@@ -83,7 +83,7 @@ public class AdjancecyMatrixGraph implements Graph{
 	@Override
 	public int getWeightedEdge(int v1, int v2) {
 		// TODO Auto-generated method stub
-		return adjancencyMatrix[v2][v1];
+		return adjancencyMatrix[v1][v2];
 	}
 
 
