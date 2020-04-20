@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgrammingPractice;
 
 public class KnapSack01Recursive {
 	
