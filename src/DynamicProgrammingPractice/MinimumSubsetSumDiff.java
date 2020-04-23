@@ -33,8 +33,8 @@ public class MinimumSubsetSumDiff {
 		for(int j = range/2 ; j >= 0 ; j--) {
 			if(t[arr.length][j] == true) {
 				
-				min_Val = range - 2  * j;
-				break;
+				min_Val = Math.min(min_Val,range - 2  * j);
+			
 				
 			}
 		}
