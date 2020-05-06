@@ -2,29 +2,18 @@ package MatrixChainMultiplication;
 
 public class PallidromePartitionRecursive {
 	
-	static int solve(String str , int i , int j) {
-		
-		if(i >= j) {
+	public static  int solve(String x){
+		if(x=="" || isPallidrome(x)){
+//			System.out.println(x);
 			return 0;
+		}else{
+			int cuts = Integer.MAX_VALUE;
+			for (int i = 1; i <x.length() ; i++) {
+				cuts  = Math.min(1+ solve(x.substring(0, i)) + solve(x.substring(i, x.length())),cuts);
+			}
+			return cuts;
 		}
-		
-		if(isPallidrome(str)) {
-			return 0;
-		}
-		
-		int min = Integer.MAX_VALUE;
-		
-		for (int k = i; k <= j-1; k++) {
-			
-			int temp =  solve(str, i, k)+
-						solve(str, k+1, j)+
-						1;
-			min = Math.min(temp, min);
-			
-		}
-		return min;
 	}
-	
 	static boolean isPallidrome(String str) {
 		
 		int leftIndex = 0;
@@ -44,10 +33,7 @@ public class PallidromePartitionRecursive {
 		// TODO Auto-generated method stub
 		
 		String str = "vinit";
-		int i = 0;
-		int j = str.length()-1;
-		
-		System.out.println(solve(str, i, j));
+		System.out.println(solve(str));
 
 	}
 
